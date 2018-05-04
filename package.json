@@ -1,0 +1,27 @@
+{
+  "name": "news-and-noteworthy",
+  "version": "1.0.0",
+  "description": "data-scraping app using cheerio and mongoose",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/will-miller93/news-and-noteworthy.git"
+  },
+  "author": "Will Miller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/will-miller93/news-and-noteworthy/issues"
+  },
+  "homepage": "https://github.com/will-miller93/news-and-noteworthy#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^5.0.17",
+    "request": "^2.85.0"
+  }
+}
