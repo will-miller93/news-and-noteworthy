@@ -1,3 +1,5 @@
+// There arent any dependencies in this page. this is all jquery event listeners ( all on click events. )
+
 // scrape page for new articles
     // GET ajax request 
 
