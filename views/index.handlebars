@@ -22,7 +22,17 @@
     </div>
 </div>
 <div id="scrapedArticles" class="container my-5">
-    {{#each article}}
-    <!-- this is where all of the html for the articles that have been scraped goes.-->
+    {{#each scrapedArticles}}
+        <div class="card text-light bg-dark mb-3 low-opacity">
+            <div class="card-header">
+                <a href="{{link}}" target="_blank" class="link-style align-left"><h4>{{title}}</h4></a>
+                <button class="btn btn-danger align-right saveArticle" data-id="{{_id}}">Save</button>
+            </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>{{teaser}}</p>
+                </blockquote>
+            </div>
+        </div>
     {{/each}}
 </div>

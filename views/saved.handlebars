@@ -7,10 +7,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/saved">Link</a>
+        <a class="nav-link" href="/saved">Link<span class="sr-only">(current)</span></a>
       </li>
     </ul>
   </div>
@@ -22,7 +22,40 @@
     </div>
 </div>
 <div id="savedArticles" class="container my-5">
-    {{#each article}}
-    <!-- this is where all of the html for the articles that have been saved go. -->
+    {{#each savedArticles}}
+        <div class="card">
+            <div class="card-header">
+                <a href="{{link}}" class="link-style align-left"><h5>{{title}}</h5></a>
+                <button class="btn btn-primary align-right unsaveArticle" data-id="{{_id}}">Unsave</button>
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{shortDescription}}</p>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="form-group" data-id="{{_id}}">
+                <div class="noteSpace">
+                    {{#each notes}}
+                        <div id="accordion" data-children=".item{{this._id}}">
+                            <div class="item{{this._id}}">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#accordion{{this._id}}" aria-expanded="true" aria-controls="exampleAccordion1">
+                                    Note
+                                </a>
+                                <div id="accordion{{this._id}}" class="collapse" role="tabpanel">
+                                    <div class="clear mb-1">
+                                        <form>
+                                            <input class="form-control mb-1" value="{{this.title}}">
+                                            <textarea class="form-control mb-1">{{this.body}}</textarea>
+                                        </form>
+                                        <button class="btn btn-sm updateNote" data-id="{{this._id}}">Update Note</button>
+                                        <button class="btn btn-sm removeNote" data-id="{{this._id}}">delete note</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
     {{/each}}
 </div>

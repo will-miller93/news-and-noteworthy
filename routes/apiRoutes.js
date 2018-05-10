@@ -8,6 +8,9 @@ const db = require("../models/index");
 // Scrape Page and Add to Database
     // get request for scrapes // scrape page and add to database
     // inside is create request to add article to database.
+apiRouter.get("/scrape", function() {
+    
+})
  
 // Save Article
     // post request to save
