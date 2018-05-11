@@ -6,16 +6,17 @@ const path = require("path");
 const mongoose = require("mongoose");
 const logger = require("morgan")
 
+// creating express instance for app
+const app = express();
+
 // Handlebars setup
 app.engine("handlebars", hndbrs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 app.set("views", path.join(__dirname, "views"));
 
-// creating express instance for app
-const app = express();
 
 // setting PORT for heroku deployment and default local host
-const PORT = process.env.PORT || 3000
+var port = process.env.PORT || 3000
 
 // Morgan logger setup
 app.use(logger("dev"));
@@ -38,6 +39,7 @@ mongoose.connect('mongodb://localhost/news_noteworthyDB');
 app.listen("PORT", function(err) {
     if (err) {
         console.log("There was an issue connecting to your server instance. Try again.");
+        // console.log(err);
     }
     else {
         console.log("App listening on PORT " + PORT);

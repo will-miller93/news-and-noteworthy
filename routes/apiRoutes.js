@@ -44,6 +44,7 @@ apiRouter.get("/scrape", function(req, res){
             });
         });
     });
+    res.send("Scrape Complete");
 });
  
 // Save Article
